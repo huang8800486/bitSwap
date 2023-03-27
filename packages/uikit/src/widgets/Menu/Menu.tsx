@@ -138,11 +138,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
               {!isMobile && (
                 <Flex alignItems="center">
-                  <Link href="javascript:;">
-                    <Button height={36} as="a">
-                      NFT
-                    </Button>
-                  </Link>
+                  {/* <Link href="javascript:;"> */}
+                  <Button height={36} as="a">
+                    NFT
+                  </Button>
+                  {/* </Link> */}
                 </Flex>
               )}
             </Flex>
