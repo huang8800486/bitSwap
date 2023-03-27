@@ -177,14 +177,14 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
             {subLinksMobileOnly?.length > 0 && (
               <SubMenuItems
                 items={subLinksMobileOnly}
-                mt={`${totalTopMenuHeight + 1}px`}
+                mt={`${totalTopMenuHeight}px`}
                 activeItem={activeSubItem}
                 isMobileOnly
               />
             )}
           </Flex>
         )}
-        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight}px` : "0"}>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
             <Footer

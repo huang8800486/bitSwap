@@ -109,7 +109,7 @@
     {
       "name": "BUSD Token",
       "symbol": "BUSD",
-      "address": "0xaB1a4d4f1D656d2450692D237fdD6C7f9146e814",
+      "address": "0x7364d9f22762e8E4793754600dFC2fAB90093601",
       "chainId": 97,
       "decimals": 18,
       "logoURI": "https://pancakeswap.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
@@ -195,20 +195,20 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
     },
     {
-      "name": "Test Shibking Token",
-      "symbol": "Shibking",
-      "address": "0xE2EA4B7Bf7a8c3D2beF2485161Ea39D0Aa638e33",
+      "name": "Test BT Token",
+      "symbol": "BT",
+      "address": "0x516581e56d1b94f53C28FE748CEa373aa9A4D611",
       "chainId": 97,
       "decimals": 18,
-      "logoURI": "https://i.ibb.co/dDKgnjg/2.png"
+      "logoURI": "https://i.ibb.co/TLKPL8K/2091679925081-pic.png"
     },
     {
-      "name": "Shibking Token",
-      "symbol": "Shibking",
-      "address": "0xE2EA4B7Bf7a8c3D2beF2485161Ea39D0Aa638e33",
+      "name": "BT Token",
+      "symbol": "BT",
+      "address": "0x965F527D9159dCe6288a2219DB51fc6Eef120dD1",
       "chainId": 56,
       "decimals": 18,
-      "logoURI": "https://i.ibb.co/dDKgnjg/2.png"
+      "logoURI": "https://i.ibb.co/TLKPL8K/2091679925081-pic.png"
     },
     {
       "name": "Wrapped BNB",

@@ -16,20 +16,20 @@ export const CAKE_TESTNET = new Token(
   'PancakeSwap Token',
   'https://pancakeswap.finance/',
 )
-export const SHIBKING_MAINNET = new Token(
+export const BT_MAINNET = new Token(
   ChainId.BSC_TESTNET,
-  '0xE2EA4B7Bf7a8c3D2beF2485161Ea39D0Aa638e33',
+  '0x965F527D9159dCe6288a2219DB51fc6Eef120dD1',
   18,
-  'SHIBKING',
-  'shibkingSwap Token',
+  'BT',
+  'bitSwap Token',
   // 'https://pancakeswap.finance/',
 )
-export const SHIBKING_TESTNET = new Token(
+export const BT_TESTNET = new Token(
   ChainId.BSC_TESTNET,
-  '0xE2EA4B7Bf7a8c3D2beF2485161Ea39D0Aa638e33',
+  '0x516581e56d1b94f53C28FE748CEa373aa9A4D611',
   18,
-  'SHIBKING',
-  'shibkingSwap Token',
+  'BT',
+  'bitSwap Token',
   // 'https://pancakeswap.finance/',
 )
 
@@ -144,9 +144,9 @@ export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
-export const SHIBKING = {
-  [ChainId.BSC]: SHIBKING_MAINNET,
-  [ChainId.BSC_TESTNET]: SHIBKING_TESTNET,
+export const BT = {
+  [ChainId.BSC]: BT_MAINNET,
+  [ChainId.BSC_TESTNET]: BT_TESTNET,
 }
 
 export const USDC = {
