@@ -33,7 +33,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.RINKEBY]: FACTORY_ADDRESS_ETH,
   [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
   [ChainId.BSC]: FACTORY_ADDRESS,
-  [ChainId.BSC_TESTNET]: '0xAB7D4EEfbAeb9Ef00bcAe83d1551d959b6fc2a75',
+  [ChainId.BSC_TESTNET]: '0xeb90793c929EE10f266340ef9A0d011Fb94213eC',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -43,7 +43,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.RINKEBY]: INIT_CODE_HASH_ETH,
   [ChainId.GOERLI]: INIT_CODE_HASH_ETH,
   [ChainId.BSC]: INIT_CODE_HASH,
-  [ChainId.BSC_TESTNET]: '0x6db792e5ffd517eac5c4e40c64eedfe7d13407eb2e89eb903e34562d0a43eee8',
+  [ChainId.BSC_TESTNET]: '0x3da593d85f1f04918fc7510108d00f5189b6df1d4f17287ea05019a2a0eaf6c5',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

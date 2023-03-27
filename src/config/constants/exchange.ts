@@ -8,7 +8,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.RINKEBY]: '0x3BC722f252C7bAE2f55647e49aDcB9d33Ff6eBcC',
   [ChainId.GOERLI]: '0x3BC722f252C7bAE2f55647e49aDcB9d33Ff6eBcC',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
-  [ChainId.BSC_TESTNET]: '0xe64d0eA1824b6A017e7dD571f9495bfef2Fbf436',
+  [ChainId.BSC_TESTNET]: '0x262973fEAebbBfC28085aBFb5d9868B86Adab62C',
 }
 
 // used to construct intermediary pairs for trading
