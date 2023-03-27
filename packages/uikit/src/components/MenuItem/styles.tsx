@@ -26,7 +26,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   align-items: center;
 
   // color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
-  color: ${({  $isActive }) => ($isActive ? ' #F5A603' : '#ffffff')};
+  color: ${({ $isActive }) => ($isActive ? "#F5A603" : "#ffffff")};
   font-size: 16px;
   font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
   opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};
@@ -56,7 +56,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   `}
 
   &:hover {
-    color: #F5A603
+    color: var(--colors-primary);
     // background: ${({ theme }) => theme.colors.tertiary};
     // ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }

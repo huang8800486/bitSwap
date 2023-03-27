@@ -211,14 +211,14 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
   return (
     <>
       <>
-        {/* <CurrencyInputHeader
+        <CurrencyInputHeader
           title={t('Swap')}
           subtitle={t('Trade tokens in an instant')}
           setIsChartDisplayed={setIsChartDisplayed}
           isChartDisplayed={isChartDisplayed}
           hasAmount={hasAmount}
           onRefreshPrice={onRefreshPrice}
-        /> */}
+        />
         <Wrapper id="swap-page" style={{ minHeight: '412px' }}>
           <AutoColumn gap="sm">
             <CurrencyInputPanel

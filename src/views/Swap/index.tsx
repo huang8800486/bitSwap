@@ -77,6 +77,37 @@ export default function Swap() {
       <SwapTitle />
       <Page isSwapBg removePadding={isChartExpanded} hideFooterOnDesktop={isChartExpanded}>
         <Flex width="100%" justifyContent="center" position="relative">
+          {!isMobile && isChartSupported && (
+            <PriceChartContainer
+              inputCurrencyId={inputCurrencyId}
+              inputCurrency={currencies[Field.INPUT]}
+              outputCurrencyId={outputCurrencyId}
+              outputCurrency={currencies[Field.OUTPUT]}
+              isChartExpanded={isChartExpanded}
+              setIsChartExpanded={setIsChartExpanded}
+              isChartDisplayed={isChartDisplayed}
+              currentSwapPrice={singleTokenPrice}
+            />
+          )}
+          {isChartSupported && (
+            <BottomDrawer
+              content={
+                <PriceChartContainer
+                  inputCurrencyId={inputCurrencyId}
+                  inputCurrency={currencies[Field.INPUT]}
+                  outputCurrencyId={outputCurrencyId}
+                  outputCurrency={currencies[Field.OUTPUT]}
+                  isChartExpanded={isChartExpanded}
+                  setIsChartExpanded={setIsChartExpanded}
+                  isChartDisplayed={isChartDisplayed}
+                  currentSwapPrice={singleTokenPrice}
+                  isMobile
+                />
+              }
+              isOpen={isChartDisplayed}
+              setIsOpen={setIsChartDisplayed}
+            />
+          )}
           <Flex flexDirection="column">
             <StyledSwapContainer $isChartExpanded={isChartExpanded}>
               <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}>
@@ -107,11 +138,11 @@ export default function Swap() {
                       <p>Please connect your wallet to view your recent transactions</p>
                     </div>
                   )}
-                  {currentIndex === 3 && (
+                  {/* {currentIndex === 3 && (
                     <div>
                       <h2>Buy and Sell crypto</h2>
                     </div>
-                  )}
+                  )} */}
                 </AppBody>
               </StyledInputCurrencyWrapper>
             </StyledSwapContainer>

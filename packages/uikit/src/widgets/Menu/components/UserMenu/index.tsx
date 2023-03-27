@@ -9,7 +9,7 @@ import { UserMenuItem } from "./styles";
 
 export const StyledUserMenu = styled(Flex)`
   align-items: center;
-  background-color: #F5A603;
+  background-color: var(--colors-primary);
   border-radius: 16px;
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;

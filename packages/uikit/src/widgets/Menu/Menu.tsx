@@ -138,11 +138,11 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
               {!isMobile && (
                 <Flex alignItems="center">
-                  {/* <Link href="javascript:;"> */}
-                  <Button height={36} as="a">
-                    NFT
-                  </Button>
-                  {/* </Link> */}
+                  <a href="http://marketplace.bitbank.exchange/" target="_blank" without rel="noreferrer">
+                    <Button height={36} as="a">
+                      NFT
+                    </Button>
+                  </a>
                 </Flex>
               )}
             </Flex>

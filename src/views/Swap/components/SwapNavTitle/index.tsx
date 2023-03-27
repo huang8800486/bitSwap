@@ -37,7 +37,7 @@ const NavItem = styled.a<{ isMobile: boolean; isCurrent: boolean }>`
     height: ${({ isMobile }) => (isMobile ? '2px' : '2px')};
     border-radius: ${({ isMobile }) => (isMobile ? '2px' : '2px')};
     width: 40px;
-    background: #f5a603;
+    background: var(--colors-primary);
   }
 `
 interface PageProps {
@@ -60,10 +60,10 @@ const SwapNavTitle: React.FC<React.PropsWithChildren<PageProps>> = ({ currentInd
       text: t('History'),
       id: 2,
     },
-    {
-      text: t('Buy Crypto'),
-      id: 3,
-    },
+    // {
+    //   text: t('Buy Crypto'),
+    //   id: 3,
+    // },
   ]
   return (
     <>
