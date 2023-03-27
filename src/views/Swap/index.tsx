@@ -70,6 +70,7 @@ export default function Swap() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const changeCurrent = (index) => {
     setCurrentIndex(index)
+    console.log(index)
   }
   return (
     <>
