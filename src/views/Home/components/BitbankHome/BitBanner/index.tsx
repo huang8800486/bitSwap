@@ -48,7 +48,7 @@ export default function BitBanner() {
           </div>
           <div className="exchange_list">
             <div className="bnb_logo">
-              <img src="/images/bitbank/bnb_icon.png" alt="" />
+              <img src="/images/bitbank/bsc.svg" alt="" />
             </div>
             <div className="bnb_text">
               <div className="txt txt1">
@@ -66,7 +66,7 @@ export default function BitBanner() {
           <div className="market_list">
             <div className="market_item">
               <div className="market_icon">
-                <img src="/images/bitbank/USDT.png" alt="" />
+                <img src="/images/bitbank/usdt.png" alt="" />
               </div>
               <div className="market_text">
                 <span>USDT</span>
@@ -75,7 +75,7 @@ export default function BitBanner() {
             </div>
             <div className="market_item">
               <div className="market_icon">
-                <img src="/images/bitbank/USDT.png" alt="" />
+                <img src="/images/bitbank/usdt.png" alt="" />
               </div>
               <div className="market_text">
                 <span>USDT</span>
@@ -84,7 +84,7 @@ export default function BitBanner() {
             </div>
             <div className="market_item">
               <div className="market_icon">
-                <img src="/images/bitbank/USDT.png" alt="" />
+                <img src="/images/bitbank/usdt.png" alt="" />
               </div>
               <div className="market_text">
                 <span>USDT</span>
@@ -93,7 +93,7 @@ export default function BitBanner() {
             </div>
             <div className="market_item">
               <div className="market_icon">
-                <img src="/images/bitbank/USDT.png" alt="" />
+                <img src="/images/bitbank/usdt.png" alt="" />
               </div>
               <div className="market_text">
                 <span>USDT</span>
@@ -102,7 +102,7 @@ export default function BitBanner() {
             </div>
             <div className="market_item">
               <div className="market_icon">
-                <img src="/images/bitbank/USDT.png" alt="" />
+                <img src="/images/bitbank/usdt.png" alt="" />
               </div>
               <div className="market_text">
                 <span>USDT</span>

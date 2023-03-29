@@ -25,7 +25,8 @@ export const StyledUserMenu = styled(Flex)`
 `;
 
 export const LabelText = styled.div`
-  color: ${({ theme }) => theme.colors.text};
+  // color: ${({ theme }) => theme.colors.text};
+  color: #17181e;
   display: none;
   font-weight: 600;
 
@@ -39,7 +40,7 @@ export const WalletImg = styled.div`
   max-width: 20px;
   img {
     width: 100%;
-    display:block;
+    display: block;
   }
 `;
 

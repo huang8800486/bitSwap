@@ -20,7 +20,7 @@ const QuestionHelper: React.FC<React.PropsWithChildren<Props>> = ({
   size = '16px',
   ...props
 }) => {
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(text, { placement })
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(text, { placement, trigger: 'click' })
 
   return (
     <Box {...props}>

@@ -13,3 +13,10 @@ export const Wrapper = styled.div`
   font-size: ${getMedia(['12px', '14px', '16px'])};
   margin-top: -1px;
 `
+export const CommonWrapper = styled.div`
+  width: 100%;
+  max-width: 1132px;
+  padding: 0 16px;
+  margin: 0 auto;
+  position: relative;
+`

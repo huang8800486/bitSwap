@@ -13,7 +13,7 @@ export const BannerWrapper = styled.div`
   .banner_market_list {
     width: 100%;
     position: relative;
-    max-width: 872px;
+    max-width: 1132px;
     padding: 0 16px;
     margin: 0 auto;
     display: flex;
@@ -51,7 +51,7 @@ export const BannerWrapper = styled.div`
     }
     .market_all {
       width: ${getMedia(['100%', 'auto', 'auto'])};
-      display:flex;
+      display: ${getMedia(['none', 'none', 'flex'])};
       justify-content: right;
       a {
         color: #fff;
@@ -67,7 +67,7 @@ export const BannerWrapper = styled.div`
   }
   .banner_exchange_title {
     width: 100%;
-    max-width: 872px;
+    max-width: 1132px;
     padding: 0 16px;
     margin: 0 auto;
     display: flex;
@@ -129,7 +129,7 @@ export const BannerWrapper = styled.div`
       display: flex;
       flex-wrap: wrap;
       .exch_item {
-        width: ${getMedia(['100%', '50%', '50%'])};
+        width: ${getMedia(['50%', '50%', '50%'])};
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
@@ -146,7 +146,7 @@ export const BannerWrapper = styled.div`
           color: #ffffff;
           flex: 1;
           h2 {
-            width: ${getMedia(['80%', '100%', '100%'])};
+            width: ${getMedia(['100%', '100%', '100%'])};
             margin-bottom: 9px;
             line-height: 1.2;
           }
@@ -164,7 +164,7 @@ export const BannerWrapper = styled.div`
     }
   }
   .banner_text {
-    width: ${getMedia(['100%', '100%', '905px'])};
+    width: ${getMedia(['100%', '100%', '1132px'])};
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -175,7 +175,7 @@ export const BannerWrapper = styled.div`
     flex-wrap: wrap;
 
     .b_text {
-      width: ${getMedia(['100%', '337px', '537px'])};
+      width: ${getMedia(['100%', '50%', '50%'])};
 
       h1 {
         font-size: ${getMedia(['24px', '28px', '34px'])};
@@ -203,20 +203,18 @@ export const BannerWrapper = styled.div`
     }
 
     .b_img {
-      width: ${getMedia(['80%', '318px', '318px'])};
+      width: ${getMedia(['100%', '100%', '50%'])};
       margin: 0 auto;
       padding-top: ${getMedia(['30px', '50px', '0'])};
+      margin-top: ${getMedia(['-32px', '-52px', '-72px'])};
       position: relative;
       min-height: 1px;
       display: ${getMedia(['none', 'block', 'block'])};
 
       img {
-        width: ${getMedia(['100%', '100%', '472px'])};
         display: block;
-        position: absolute;
-        left: ${getMedia(['0', '-50px', '-50px'])};
-        top: ${getMedia(['0', '-57px', '-57px'])};
         max-width: inherit;
+        width: 100%;
       }
     }
   }
