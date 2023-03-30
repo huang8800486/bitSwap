@@ -3,7 +3,6 @@ import { PageMeta } from 'components/Layout/Page'
 import BitBanner from './components/BitbankHome/BitBanner'
 import FarmsContent from './components/BitbankHome/FarmsContent'
 import ReviewsContent from './components/BitbankHome/ReviewsContent'
-import Partners from './components/BitbankHome/Partners'
 
 const BitWraper = styled.div`
   width: 100%;
@@ -18,7 +17,6 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <BitBanner />
         <FarmsContent />
         <ReviewsContent />
-        {/* <Partners /> */}
       </BitWraper>
     </>
   )

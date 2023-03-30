@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper'
 import Image from 'next/image'
@@ -12,6 +13,7 @@ import RightSvg from './RightSvg'
 import PrevSvg from './PrevSvg'
 import PlaySvg from './PlaySvg'
 import ExchangesPartners from './ExchangesPartners'
+import YoutubeVideo from './YoutubeVideo'
 
 const ReviewsContainer = styled.div`
   width: 100%;
@@ -185,6 +187,32 @@ const ReviewsInvestor = styled.div`
     height: auto;
   }
 `
+const VideoButton = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  background: ${({ theme }) => theme.colors.primary};
+  box-shadow: rgba(9, 12, 14, 0.24) 0px 6px 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    width: 72px;
+    height: 72px;
+    box-shadow: none;
+    svg {
+      transform: scale(1.2);
+    }
+  }
+`
 const ReviewsBitwap = styled.div`
   width: 100%;
   position: relative;
@@ -212,36 +240,68 @@ const ReviewsBitwap = styled.div`
         background: #fff;
         position: relative;
         overflow: hidden;
-        .video_button {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate3d(-50%, -50%, 0);
-          width: 64px;
-          height: 64px;
-          border-radius: 50px;
-          background: ${({ theme }) => theme.colors.primary};
-          box-shadow: rgba(9, 12, 14, 0.24) 0px 6px 16px;
-          transition: all 0.3s ease;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          svg {
-            transition: all 0.3s ease;
-          }
-          &:hover {
-            width: 72px;
-            height: 72px;
-            box-shadow: none;
-            svg {
-              transform: scale(1.2);
-            }
+      }
+    }
+  }
+`
+const VideoWrapper = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .you_video {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+    .you_pad {
+      width: 100%;
+      padding-top: 57%;
+      position: relative;
+      overflow: hidden;
+      .you_text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        > div {
+          width: 100%;
+          height: 100%;
+          iframe {
+            width: 100%;
+            height: 100%;
           }
         }
       }
     }
   }
 `
+const YoutubeTeleport = ({ isOpen, onClose }) => {
+  if (!isOpen) return null
+  return ReactDOM.createPortal(
+    <VideoWrapper onClick={onClose}>
+      <div className="you_video">
+        <div className="you_pad">
+          <div className={['you_text', isOpen ? 'active' : ''].join(' ')}>
+            <YoutubeVideo opts={{ videoId: 'rgDej0PolGs' }} />
+          </div>
+        </div>
+      </div>
+    </VideoWrapper>,
+    document.body,
+  )
+}
+
 export default function ReviewsContent() {
   const [swiperRef, setSwiperRef] = useState<SwiperCore>(null)
   const [currentSlidesPerView, setCurrentSlidesPerView] = useState<number>(1)
@@ -280,98 +340,103 @@ export default function ReviewsContent() {
     }
     return undefined
   }, [isMobile, isTablet, isDesktop])
+
+  const [open, setOpen] = useState(false)
   return (
-    <ReviewsContainer>
-      <ReviewsWrapper>
-        <ReviewsSwiperWrap>
-          <ReviewsTitle>
-            <h2>Reviews From Reputable Crypto Resources</h2>
-            <p>Read more about the accomplishments of Bitbank on the most reputable crypto resources.</p>
-            <div className="custom-button-wrap">
-              <div className="custom-button-next custom-button">
-                <PrevSvg />
+    <>
+      <ReviewsContainer>
+        <ReviewsWrapper>
+          <ReviewsSwiperWrap>
+            <ReviewsTitle>
+              <h2>Reviews From Reputable Crypto Resources</h2>
+              <p>Read more about the accomplishments of Bitbank on the most reputable crypto resources.</p>
+              <div className="custom-button-wrap">
+                <div className="custom-button-next custom-button">
+                  <PrevSvg />
+                </div>
+                <div className="custom-button-prev custom-button">
+                  <PrevSvg />
+                </div>
               </div>
-              <div className="custom-button-prev custom-button">
-                <PrevSvg />
-              </div>
-            </div>
-          </ReviewsTitle>
-          <ReviewsSwiper>
-            <StyledSwiper
-              onSwiper={setSwiperRef}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: '.custom-button-prev',
-                nextEl: '.custom-button-next',
-              }}
-              slidesPerView={currentSlidesPerView}
-              spaceBetween={currentSpaceBetween}
-              grabCursor
-              speed={1000}
-              loop
-            >
-              {ReviewsList.map((item, index) => {
-                const childKey = `Banner${index}`
-                return (
-                  <SwiperSlide key={childKey}>
-                    <div className="reviews_item">
-                      <Image src={item.image} alt="item" width={160} height={40} />
-                      <span>{item.text}</span>
-                      <a
-                        href="https://dappradar.com/blog/biswap-attracts-new-users-and-pushes-volume-up-69"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <p>Read more</p>
-                        <RightSvg />
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                )
-              })}
-            </StyledSwiper>
-          </ReviewsSwiper>
-        </ReviewsSwiperWrap>
-        <ReviewsInvestor>
-          <InvestorTitle>
-            <h2>Our Strategic Investor</h2>
-            <p>
-              Binance Labs, the venture capital and incubator of Binance, announced strategic investment in BitBank. The
-              synergy from two companies working together in tandem will bring new high-quality products & services,
-              technology enhancement, and further worldwide
-            </p>
-            <Link href="/swap">
-              <Button as="a">Details</Button>
-            </Link>
-          </InvestorTitle>
-          <img className="binanceImg" src="/images/bitbank/illustration.png" alt="" />
-        </ReviewsInvestor>
-        <ReviewsBitwap>
-          <div className="bitswap_content">
-            <InvestorTitle className="bitswap_title">
-              <h2>What Is Bitbank (BT)?</h2>
+            </ReviewsTitle>
+            <ReviewsSwiper>
+              <StyledSwiper
+                onSwiper={setSwiperRef}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: '.custom-button-prev',
+                  nextEl: '.custom-button-next',
+                }}
+                slidesPerView={currentSlidesPerView}
+                spaceBetween={currentSpaceBetween}
+                grabCursor
+                speed={1000}
+                loop
+              >
+                {ReviewsList.map((item, index) => {
+                  const childKey = `Banner${index}`
+                  return (
+                    <SwiperSlide key={childKey}>
+                      <div className="reviews_item">
+                        <Image src={item.image} alt="item" width={160} height={40} />
+                        <span>{item.text}</span>
+                        <a
+                          href="https://dappradar.com/blog/biswap-attracts-new-users-and-pushes-volume-up-69"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <p>Read more</p>
+                          <RightSvg />
+                        </a>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })}
+              </StyledSwiper>
+            </ReviewsSwiper>
+          </ReviewsSwiperWrap>
+          <ReviewsInvestor>
+            <InvestorTitle>
+              <h2>Our Strategic Investor</h2>
               <p>
-                Bitbank is a decentralized exchange (DEX) that allows users to swap tokens on the BNB Smart Chain.
-                Besides having a novel referral system and low trading fees, Biswap also offers an assortment of
-                products and services
+                Binance Labs, the venture capital and incubator of Binance, announced strategic investment in BitBank.
+                The synergy from two companies working together in tandem will bring new high-quality products &
+                services, technology enhancement, and further worldwide
               </p>
               <Link href="/swap">
-                <Button as="a" className="binanceAcademy">
-                  <img src="/images/bitbank/binanceAcademy.png" alt="" />
-                </Button>
+                <Button as="a">Details</Button>
               </Link>
             </InvestorTitle>
-            <div className="bitswap_video">
-              <div className="video_pad">
-                <div className="video_button">
-                  <PlaySvg />
+            <img className="binanceImg" src="/images/bitbank/illustration.png" alt="" />
+          </ReviewsInvestor>
+          <ReviewsBitwap>
+            <div className="bitswap_content">
+              <InvestorTitle className="bitswap_title">
+                <h2>What Is Bitbank (BT)?</h2>
+                <p>
+                  Bitbank is a decentralized exchange (DEX) that allows users to swap tokens on the BNB Smart Chain.
+                  Besides having a novel referral system and low trading fees, Biswap also offers an assortment of
+                  products and services
+                </p>
+                <Link href="/swap">
+                  <Button as="a" className="binanceAcademy">
+                    <img src="/images/bitbank/binanceAcademy.png" alt="" />
+                  </Button>
+                </Link>
+              </InvestorTitle>
+              <div className="bitswap_video">
+                <div className="video_pad">
+                  <VideoButton className="video_button" onClick={() => setOpen(true)}>
+                    <PlaySvg />
+                  </VideoButton>
+                  <YoutubeTeleport isOpen={open} onClose={() => setOpen(false)} />
                 </div>
               </div>
             </div>
-          </div>
-        </ReviewsBitwap>
-        <ExchangesPartners />
-      </ReviewsWrapper>
-    </ReviewsContainer>
+          </ReviewsBitwap>
+          <ExchangesPartners />
+        </ReviewsWrapper>
+      </ReviewsContainer>
+    </>
   )
 }
