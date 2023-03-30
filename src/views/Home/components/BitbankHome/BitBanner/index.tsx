@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Button, Text } from '@pancakeswap/uikit'
 import { Wrapper } from '../styleds'
 import { BannerWrapper } from './styleds'
+import MarketSwiper from './MarketSwiper'
 
 export default function BitBanner() {
   return (
@@ -62,60 +63,18 @@ export default function BitBanner() {
             </div>
           </div>
         </div>
-        <div className="banner_market_list">
-          <div className="market_list">
-            <div className="market_item">
-              <div className="market_icon">
-                <img src="/images/bitbank/usdt.png" alt="" />
-              </div>
-              <div className="market_text">
-                <span>USDT</span>
-                <p>泰达币</p>
-              </div>
+        <div className="banner_market_list_wrap">
+          <div className="banner_market_list">
+            <div className="market_list">
+              <MarketSwiper />
             </div>
-            <div className="market_item">
-              <div className="market_icon">
-                <img src="/images/bitbank/usdt.png" alt="" />
-              </div>
-              <div className="market_text">
-                <span>USDT</span>
-                <p>泰达币</p>
-              </div>
+            <div className="market_all">
+              <Link href="/swap">
+                <Text as="a">
+                  All Markets <img src="/images/bitbank/right.png" alt="" />
+                </Text>
+              </Link>
             </div>
-            <div className="market_item">
-              <div className="market_icon">
-                <img src="/images/bitbank/usdt.png" alt="" />
-              </div>
-              <div className="market_text">
-                <span>USDT</span>
-                <p>泰达币</p>
-              </div>
-            </div>
-            <div className="market_item">
-              <div className="market_icon">
-                <img src="/images/bitbank/usdt.png" alt="" />
-              </div>
-              <div className="market_text">
-                <span>USDT</span>
-                <p>泰达币</p>
-              </div>
-            </div>
-            <div className="market_item">
-              <div className="market_icon">
-                <img src="/images/bitbank/usdt.png" alt="" />
-              </div>
-              <div className="market_text">
-                <span>USDT</span>
-                <p>泰达币</p>
-              </div>
-            </div>
-          </div>
-          <div className="market_all">
-            <Link href="/swap">
-              <Text as="a">
-                All Markets <img src="/images/bitbank/right.png" alt="" />
-              </Text>
-            </Link>
           </div>
         </div>
       </BannerWrapper>

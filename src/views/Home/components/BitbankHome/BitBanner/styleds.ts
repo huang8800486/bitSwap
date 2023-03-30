@@ -10,30 +10,39 @@ export const BannerWrapper = styled.div`
   background-size: cover;
   min-height: 300px;
   color: #fff;
-  .banner_market_list {
+  .banner_market_list_wrap {
     width: 100%;
     position: relative;
     max-width: 1132px;
     padding: 0 16px;
     margin: 0 auto;
+    padding-top: ${getMedia(['32px', '52px', '72px'])};
+    padding-bottom: ${getMedia(['32px', '42px', '52px'])};
+  }
+  .banner_market_list {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: ${getMedia(['32px', '52px', '72px'])};
-    padding-bottom: ${getMedia(['32px', '42px', '52px'])};
     flex-wrap: wrap;
     flex-direction: ${getMedia(['column-reverse', 'row', 'row'])};
     .market_list {
-      flex: 1;
+      width: ${getMedia(['100%', '90%', '90%'])};
       display: flex;
       flex-wrap: wrap;
+      height: 55px;
+      overflow: hidden;
       .market_item {
-        width: ${getMedia(['50%', '25%', '20%'])};
+        // width: ${getMedia(['50%', '25%', '20%'])};
         padding: 10px 0;
         display: flex;
         .market_icon {
           width: 35px;
           margin-right: 8px;
+          img {
+            display: block;
+            width: 100%;
+          }
         }
         .market_text {
           flex: 1;
@@ -50,7 +59,7 @@ export const BannerWrapper = styled.div`
       }
     }
     .market_all {
-      width: ${getMedia(['100%', 'auto', 'auto'])};
+      width: ${getMedia(['100%', '10%', '10%'])};
       display: ${getMedia(['none', 'none', 'flex'])};
       justify-content: right;
       a {
