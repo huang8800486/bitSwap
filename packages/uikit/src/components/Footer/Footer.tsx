@@ -9,7 +9,7 @@ import {
   StyledListItem,
   StyledSocialLinks,
   StyledText,
-  StyledToolsContainer,
+  StyledFootContent,
 } from "./styles";
 
 import { Button } from "../Button";
@@ -30,79 +30,100 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   buyCakeLabel,
   ...props
 }) => {
+  console.log("items", items);
   return (
     <StyledFooter data-theme="dark" p={["40px 16px", null, "56px 40px 32px 40px"]} {...props} justifyContent="center">
-      <Flex flexDirection="column" width={["100%", null, "1200px;"]}>
-        <StyledIconMobileContainer display={["block", null, "none"]}>
-          <LogoWithTextIcon isDark width="130px" />
-        </StyledIconMobileContainer>
-        <Flex
-          order={[2, null, 1]}
-          flexDirection={["column", null, "row"]}
-          justifyContent="space-between"
-          alignItems="flex-start"
-          mb={["42px", null, "36px"]}
-        >
-          {items?.map((item) => (
-            <StyledList key={item.label}>
-              <StyledListItem>{item.label}</StyledListItem>
-              {item.items?.map(({ label, href, isHighlighted = false }) => (
-                <StyledListItem key={label}>
-                  {href ? (
-                    <Link
-                      data-theme="dark"
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      color={isHighlighted ? vars.colors.warning : "text"}
-                      bold={false}
-                    >
-                      {label}
-                    </Link>
-                  ) : (
-                    <StyledText>{label}</StyledText>
-                  )}
-                </StyledListItem>
+      <Flex flexDirection="column" width={["100%", null, "1120px;"]}>
+        <StyledFootContent>
+          <div className="coin_detail">
+            <div className="coin_wrapper">
+              <div className="coin_price">
+                <div className="coin_img">
+                  <img src="/images/bitbank/logo.png" alt="" />
+                </div>
+                <div className="price_box">
+                  <span>BT</span>
+                  <p>0.203</p>
+                </div>
+              </div>
+              <div className="coin_total_list">
+                <div className="coin_list">
+                  <p>Max Supply</p>
+                  <span>600 000 000</span>
+                </div>
+                <div className="coin_list">
+                  <p>Total supply</p>
+                  <span>354 911 230</span>
+                </div>
+                <div className="coin_list">
+                  <p>Circulating supply</p>
+                  <span>289 701 642</span>
+                </div>
+                <div className="coin_list">
+                  <p>Total Burned</p>
+                  <span>42 114 754</span>
+                </div>
+                <div className="coin_list">
+                  <p>Market Cap</p>
+                  <span>$0</span>
+                </div>
+              </div>
+              <div className="coin_buy">
+                <div className="add_coin">
+                  <img src="/images/bitbank/metamask-transparent.svg" alt="" />
+                </div>
+
+                <Link href="/swap">
+                  <Button as="a">Buy BT</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="relate_detail">
+            <div className="about_box">
+              {items?.map((item) => (
+                <StyledList key={item.label}>
+                  <StyledListItem>{item.label}</StyledListItem>
+                  {item.items?.map(({ label, href, isHighlighted = false }) => (
+                    <StyledListItem key={label}>
+                      {href ? (
+                        <Link
+                          data-theme="dark"
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          color="text"
+                          bold={false}
+                        >
+                          {label}
+                        </Link>
+                      ) : (
+                        <StyledText>{label}</StyledText>
+                      )}
+                    </StyledListItem>
+                  ))}
+                </StyledList>
               ))}
-            </StyledList>
-          ))}
-          <Box display={["none", null, "block"]}>
-            <LogoWithTextIcon isDark width="160px" />
-          </Box>
-        </Flex>
-        <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} />
-        <StyledToolsContainer
-          data-theme="dark"
-          order={[1, null, 3]}
-          flexDirection={["column", null, "row"]}
-          justifyContent="space-between"
-        >
-          <Flex order={[2, null, 1]} alignItems="center">
-            <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-            <LangSelector
-              currentLang={currentLang}
-              langs={langs}
-              setLang={setLang}
-              color="textSubtle"
-              dropdownPosition="top-right"
-            />
-          </Flex>
-          {/* <Flex order={[1, null, 2]} mb={["24px", null, "0"]} justifyContent="space-between" alignItems="center">
-            <Box mr="20px">
-              <CakePrice cakePriceUsd={cakePriceUsd} color="textSubtle" />
-            </Box>
-            <Button
-              data-theme="light"
-              as="a"
-              href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82&chainId=56"
-              target="_blank"
-              scale="sm"
-              endIcon={<ArrowForwardIcon color="backgroundAlt" />}
-            >
-              {buyCakeLabel}
-            </Button>
-          </Flex> */}
-        </StyledToolsContainer>
+            </div>
+            <div className="communlty_box">
+              <h2>Community</h2>
+              <div className="communlty_icon">
+                <StyledSocialLinks />
+              </div>
+              <div className="communlty_txt">
+                <div className="marketplace txt_box">
+                  <div className="market_box">
+                    <img src="/images/bitbank/Market-svg.png" alt="" />
+                  </div>
+                  <span>NFT Marketplace</span>
+                </div>
+                <div className="certik txt_box">
+                  <img src="/images/bitbank/CertikAudited.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </StyledFootContent>
       </Flex>
     </StyledFooter>
   );

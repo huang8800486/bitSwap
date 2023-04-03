@@ -20,6 +20,7 @@ const ReviewsContainer = styled.div`
   position: relative;
   background: #252525;
   font-family: Arial-Regular, Arial;
+  color: #fff;
 `
 const ReviewsWrapper = styled.div`
   width: 100%;

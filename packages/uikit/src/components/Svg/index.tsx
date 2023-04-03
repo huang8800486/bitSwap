@@ -61,6 +61,7 @@ export { default as HotIcon } from "./Icons/Hot";
 export { default as IfoIcon } from "./Icons/Ifo";
 export { default as InfoIcon } from "./Icons/Info";
 export { default as InstagramIcon } from "./Icons/Instagram";
+export { default as FacebookIcon } from "./Icons/Facebook";
 export { default as LanguageCurrencyIcon } from "./Icons/LanguageCurrency";
 export { default as LanguageIcon } from "./Icons/Language";
 export { default as LaurelLeftIcon } from "./Icons/LaurelLeft";
